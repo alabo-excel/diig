@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+    app:
+      container_name: diig-website
+      image: php:fpm-alpine3.14
+      command: ["sh", "-c", "php -S 0.0.0.0:2020"]
+      ports:
+        - "2020:2020"
+      working_dir: /app
+      volumes:
+        - ./:/app
